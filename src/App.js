@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-
+import TaskContainer from './containers/TaskContainer';
 
 class App extends Component {
     render() {
         return(
             <div>
-                <h1>Todolist...</h1>
+                <TaskContainer />
             </div>
         );
     }
