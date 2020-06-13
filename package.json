@@ -1,0 +1,27 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "\"# todolist\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "react-scripts test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niks23/todolist.git"
+  },
+  "author": "Nikhil S",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niks23/todolist/issues"
+  },
+  "homepage": "https://github.com/niks23/todolist#readme",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
