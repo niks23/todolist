@@ -23,7 +23,7 @@ const TaskForm = props => {
     }
 
     return (
-        <form onSubmit={inputSubmitHandler}> 
+        <form onSubmit={inputSubmitHandler}>             
             <input 
               name="task"
               type="text" 
