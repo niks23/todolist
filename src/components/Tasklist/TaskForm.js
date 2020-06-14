@@ -4,7 +4,6 @@ import Button from "../UI/Button";
 import Input from "../UI/Input";
 
 const TaskForm = props => {
-
     const [todo, setTodo] = useState({
       id: "",
       task: "",
@@ -12,8 +11,7 @@ const TaskForm = props => {
     })
 
     const inputChangeHandler = (e) => {
-      setTodo({...todo, task: e.target.value})
-      console.log(e.target.value);
+      setTodo({...todo, task: e.target.value})      
     }
 
     const inputSubmitHandler = (e) => {
@@ -25,11 +23,12 @@ const TaskForm = props => {
     }
 
     return (
-        <form onSubmit={inputSubmitHandler}>             
+        <form onSubmit={inputSubmitHandler} className="newtask">             
             <Input 
               name="task" 
               type="text"
-              values={todo.task}
+              value={todo.task}
+              placeholder='Type here...'
               changed={inputChangeHandler}/> 
             <Button>Add Tasks</Button>            
         </form>

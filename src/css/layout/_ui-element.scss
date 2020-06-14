@@ -1,0 +1,51 @@
+.newtask {
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  input {
+    width: 65%;
+    height: 50px;
+    background-color: rgba(27, 112, 137, 1);
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    &:focus {
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  button {
+    width: 25%;
+    height: 50px;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgba(202, 156, 24, 1);
+    cursor: pointer;
+    font-weight: 700;
+
+    &:focus {
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      width: 40%;
+      margin-top: 15px;
+    }
+  }
+}

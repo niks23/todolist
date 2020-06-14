@@ -4,8 +4,10 @@ const Input = props =>  {
     return (
         <input 
             name={props.name}
+            className={props.class}
             type={props.type}
-            value={props.values}
+            value={props.value}
+            placeholder={props.placeholder}
             onChange={props.changed}
         />
     )
