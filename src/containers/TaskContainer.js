@@ -9,7 +9,7 @@ library.add(faTrash);
 class TaskContainer extends Component {                      
     render(){        
       return (
-        <div>{console.log("dndnd",this.props.taskList) }
+        <div>
             <TaskForm addtask={this.props.addTaskHandler}/>
             <TaskList 
                 taskList={this.props.tasklist}
