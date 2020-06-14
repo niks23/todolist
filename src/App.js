@@ -19,8 +19,7 @@ class App extends Component {
     }
   }
 
-  componentDidUpdate() {
-    console.log("[component update]");
+  componentDidUpdate() {    
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.state.task));
   }
 
@@ -35,8 +34,7 @@ class App extends Component {
     newTaskList[taskId] = {
       ...newTaskList[taskId],
       completed: !newTaskList[taskId].completed,
-    };
-    console.log(newTaskList[taskId].completed);
+    };    
     this.setState({
       task: newTaskList,
     });

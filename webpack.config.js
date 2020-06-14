@@ -24,24 +24,13 @@ module.exports = {
 
             },
             {
-                test: /\.(css|sass|scss)$/,                
-                    // loader: 'style-loader!css-loader!sass-loader'
+                test: /\.(css|sass|scss)$/,                                   
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader'
-                ]
-                //     use: ExtractTextPlugin.extract({
-                //     use: ['css-loader', 'sass-loader']
-                // })                                       
-            }
-            // {
-            //     test: /\.(s*)css$/,                
-            //     // loader: 'style-loader!css-loader!sass-loader'
-            //     use: ExtractTextPlugin.extract({
-            //         use: ['css-loader', 'sass-loader']
-            //     })                                    
-            // }
+                ]                
+            }            
         ]
     },
     plugins: [
