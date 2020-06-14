@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import uuid from "react-uuid";
+import Button from "../UI/Button";
+import Input from "../UI/Input";
 
 const TaskForm = props => {
 
@@ -24,13 +26,12 @@ const TaskForm = props => {
 
     return (
         <form onSubmit={inputSubmitHandler}>             
-            <input 
-              name="task"
-              type="text" 
-              value={todo.task}
-              onChange={inputChangeHandler} 
-            />
-            <button>Add Task</button>
+            <Input 
+              name="task" 
+              type="text"
+              values={todo.task}
+              changed={inputChangeHandler}/> 
+            <Button>Add Tasks</Button>            
         </form>
     )
 }

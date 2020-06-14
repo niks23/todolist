@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
-import TaskForm from '../components/TaskForm';
-import TaskList from '../components/TaskList';
+import TaskForm from '../components/Tasklist/TaskForm';
+import TaskList from '../components/Tasklist/TaskList';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {faTrash} from '@fortawesome/free-solid-svg-icons';
+
+library.add(faTrash);
 
 const LOCAL_STORAGE_KEY = "current-tasklist";
 
-class TaskContainer extends Component {       
-
+class TaskContainer extends Component {             
     state = {
         task: []
     }
 
     componentDidMount() {
-        const storageTask = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+        const userData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));                      
+        if(userData !== null) {             
+            this.setState({task: userData})            
+        } 
     }
-
-    componentDidUpdate() {        
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.state.tasks))
-        
+    
+    componentDidUpdate() {
+        console.log("[component update]");
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.state.task));        
     }
 
     addTaskHandler = todo => {            
         this.state.task.push(todo);        
-        this.setState({task: this.state.task})
-        
-        // console.log(this.state.task);
+        this.setState({task: this.state.task})                    
     }
 
     toggleCompleteHandler = id => {                        
@@ -42,6 +46,18 @@ class TaskContainer extends Component {
         this.setState({ task: task})
     }
 
+    updateTaskHandler = (taskName, id) => {
+        const items = this.state.task;
+
+        items.map(item => {
+            if(item.id === id) {
+                item.task = taskName
+            }
+        })
+
+        this.setState({ task: items })
+    } 
+
     render(){
         return (
                 <div>
@@ -50,6 +66,7 @@ class TaskContainer extends Component {
                         taskList={this.state.task}
                         toggleComplete={this.toggleCompleteHandler} 
                         deleteTask={this.deleteTaskHandler}
+                        updateTask={this.updateTaskHandler}
                     />                    
                 </div>
         );
